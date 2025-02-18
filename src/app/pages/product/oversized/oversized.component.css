@@ -9,10 +9,6 @@ h1 {
     text-align: center;
 }
 
-img {
-    width: 300px;
-}
-
 #container {
     display: flex;
     flex-direction: row;
@@ -23,14 +19,79 @@ img {
     padding: 20px;
 }
 
-#card {
+#container:hover > :not(:hover){
+    filter: blur(5px);
+    opacity: 0.5;
+}
+
+.card {
     padding: 10px;
     box-shadow: 0px 0px 5px black;
     display: grid;
     row-gap: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
     justify-items: center;
 }
 
-span {
+.product_img {
+    width: 300px;
+}
+
+.price {
     text-decoration: line-through;
+}
+
+/* Cart styling */
+
+.cart {
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cart_items {
+    box-shadow: 0px 0px 5px black;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 15px;
+    text-align: start;
+}
+
+.cart_imgs {
+    width: 200px;
+    border-radius: 15px;
+}
+
+.split {
+    display: grid;
+    row-gap: 20px;
+}
+
+.cart_name {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btns {
+    display: flex;
+    column-gap: 8px;
+}
+
+.total {
+    text-align: start;
 }
