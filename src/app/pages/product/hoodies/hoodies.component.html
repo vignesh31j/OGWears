@@ -1,0 +1,9 @@
+<h1>Hoodies Collections</h1>
+<div id="container">
+    <div *ngFor="let OS of OShirt" id="card">
+        <img [src]="OS.img" alt="">
+        <p>{{OS.name}}</p>
+        <p><span> Rs {{OS.ogprice}}/- </span>Rs {{OS.price}}/-</p>
+    </div>
+</div>
+
