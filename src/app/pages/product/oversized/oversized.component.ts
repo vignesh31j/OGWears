@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-oversized',
@@ -22,38 +23,9 @@ export class OversizedComponent {
     { id: 10, img: "https://otakukulture.in/cdn/shop/files/Berserk_I.webp?v=1719315585&width=713", name: "Berserk Vintage Oversized T-Shirt", price: 699, ogprice: 1000, quantity: 1 },
   ]
 
-  cart: any[] = [];
-  addToCart(selectedShirt: any) {
-    const ex_pro = this.cart.find((item) => item.id === selectedShirt.id);
-    if (ex_pro) {
-      ex_pro.quantity += 1;
-    } else {
-      this.cart.push({ ...selectedShirt, quantity: 1 });
-    }
-  }
+  constructor(private cartService: CartService) {}
 
-  minToCart(selectedShirt: any) {
-    const ex_pro = this.cart.find((item) => item.id === selectedShirt.id);
-    if (ex_pro) {
-      ex_pro.quantity -= 1;
-    } else {
-      this.cart.push({ ...selectedShirt, quantity: 1 });
-    }
-    if (ex_pro.quantity < 0) {
-      ex_pro.quantity = 0;
-    }
+  addToCart(item: any) {
+    this.cartService.addToCart(item);
   }
-
-  removeCart(selectedShirt: any) {
-    this.cart = this.cart.filter(item => item.id !== selectedShirt.id);
-  }
-
-  getCartTotal(): number {
-    return this.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-  }
-
-  getTotalQuantity(): number {
-    return this.cart.reduce((total, item) => total + item.quantity, 0);
-  }
-  
 }

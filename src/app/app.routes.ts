@@ -8,6 +8,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { OversizedComponent } from './pages/product/oversized/oversized.component';
 import { HoodiesComponent } from './pages/product/hoodies/hoodies.component';
 import { RegularComponent } from './pages/product/regular/regular.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartService } from './services/cart.service';
 
 export const routes: Routes = [
     {path:"",component:DashboardComponent},
@@ -19,4 +21,6 @@ export const routes: Routes = [
     {path:"oversized",component:OversizedComponent},
     {path:"hoodies",component:HoodiesComponent},
     {path:"regular",component:RegularComponent},
+    {path:"cart",component:CartComponent},
+    {path:"cart",component:CartService},
 ];

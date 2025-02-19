@@ -8,33 +8,3 @@
 
     </div>
 </div>
-
-<div class="cart">
-    <h2>Your Cart</h2>
-    <div *ngIf="cart.length > 0; else emptyCart" class="cart_items">
-        <ul>
-            <li *ngFor="let item of cart">
-                <img [src]="item.img" alt="{{ item.name }}" class="cart_imgs">
-                <div class="split">
-                    <span class="cart_name"> {{ item.name }}</span>
-                    <span class="cart_price"> Rs {{ item.price }} x {{ item.quantity }} = Rs {{ item.price * item.quantity}} </span>
-                    <div class="btns">
-                        <button (click)="addToCart(item); $event.stopPropagation();">+</button>
-                        <span>{{ item.quantity }}</span>
-                        <button (click)="minToCart(item); $event.stopPropagation();">-</button>
-                        <button (click)="removeCart(item); $event.stopPropagation();">Remove</button>
-                    </div>
-                </div>
-            </li>
-            <li><div class="total">
-                <h3> Your Cart Total:  </h3>
-                <h3> Total Items in Cart: {{ getTotalQuantity() }} </h3>
-                <h3> Total Items Cost: Rs {{ getCartTotal() }}/-  </h3>
-            </div></li>
-        </ul>
-        
-    </div>
-    <ng-template #emptyCart>
-        <p>Your cart is empty.</p>
-    </ng-template>
-</div>
