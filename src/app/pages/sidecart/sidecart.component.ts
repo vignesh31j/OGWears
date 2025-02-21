@@ -3,22 +3,19 @@ import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-cart',
+  selector: 'app-sidecart',
   imports:[CommonModule],
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  templateUrl: './sidecart.component.html',
+  styleUrl: './sidecart.component.css'
 })
-export class CartComponent {
+export class SidecartComponent {
+
   cart: any[] = [];
 
   constructor(private cartService: CartService) {
     this.cartService.cartObservable.subscribe(updatedCart => {
       this.cart = updatedCart;
     });
-  }
-
-  addToLike(item: any){
-    this.cartService.addToLike(item);
   }
 
   addToCart(item: any) {

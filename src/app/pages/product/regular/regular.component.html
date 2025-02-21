@@ -1,10 +1,15 @@
-<h1>Oversized Collections</h1>
-<div id="container">
-    <div *ngFor="let OS of OShirt" class="card">
-        <img [src]="OS.img" alt="" class="product_img">
-        <p>{{OS.name}}</p>
-        <p><span class="price"> Rs {{OS.ogprice}}/- </span>Rs {{OS.price}}/-</p>
-        <button (click)="addToCart(OS); $event.stopPropagation();">Add to Cart</button>
-
+<div class="division">
+    <div>
+        <h1>Oversized Collections</h1>
+        <div id="container">
+            <div *ngFor="let OS of OShirt" class="card">
+                <img [src]="OS.img" alt="" class="product_img">
+                <p>{{OS.name}}</p>
+                <p><span class="price"> Rs {{OS.ogprice}}/- </span>Rs {{OS.price}}/-</p>
+                <button (click)="addToCart(OS); $event.stopPropagation();">Add to Cart</button>
+                <button (click)="addToLike(OS); $event.stopPropagation();" class="like"><img src="https://pngfre.com/wp-content/uploads/Black-Heart-2.png" alt="" width="25px" height="25px"></button>
+            </div>
+        </div>
     </div>
+    <app-sidecart></app-sidecart>
 </div>

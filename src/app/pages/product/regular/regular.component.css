@@ -26,6 +26,7 @@
   
   .card {
       padding: 10px;
+      position: relative;
       box-shadow: 0px 0px 5px black;
       display: grid;
       row-gap: 10px;
@@ -95,3 +96,19 @@
   .total {
       text-align: start;
   }
+
+  .division {
+    display: flex;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+}
+
+.like {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

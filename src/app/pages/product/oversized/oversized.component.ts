@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
+import { SidecartComponent } from '../../sidecart/sidecart.component';
 
 @Component({
   selector: 'app-oversized',
-  imports: [CommonModule],
+  imports: [CommonModule,SidecartComponent],
   templateUrl: './oversized.component.html',
   styleUrl: './oversized.component.css'
 })
@@ -28,4 +29,9 @@ export class OversizedComponent {
   addToCart(item: any) {
     this.cartService.addToCart(item);
   }
+
+  addToLike(item: any){
+    this.cartService.addToLike(item);
+  }
+  
 }

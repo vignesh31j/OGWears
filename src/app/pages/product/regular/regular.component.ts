@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
+import { sign } from 'crypto';
+import { SidecartComponent } from '../../sidecart/sidecart.component';
 
 @Component({
   selector: 'app-regular',
-  imports: [CommonModule],
+  imports: [CommonModule,SidecartComponent],
   templateUrl: './regular.component.html',
   styleUrl: './regular.component.css'
 })
@@ -27,5 +29,9 @@ export class RegularComponent {
   
     addToCart(item: any) {
       this.cartService.addToCart(item);
+    }
+
+    addToLike(item: any){
+      this.cartService.addToLike(item);
     }
 }

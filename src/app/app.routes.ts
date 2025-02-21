@@ -10,6 +10,8 @@ import { HoodiesComponent } from './pages/product/hoodies/hoodies.component';
 import { RegularComponent } from './pages/product/regular/regular.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { SidecartComponent } from './pages/sidecart/sidecart.component';
+import { LikeComponent } from './pages/like/like.component';
 
 export const routes: Routes = [
     {path:"",component:DashboardComponent},
@@ -23,4 +25,6 @@ export const routes: Routes = [
     {path:"regular",component:RegularComponent},
     {path:"cart",component:CartComponent},
     {path:"cart",component:CartService},
+    {path:"sidecart",component:SidecartComponent},
+    {path:"like",component:LikeComponent},
 ];

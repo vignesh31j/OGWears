@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
+import { SidecartComponent } from '../../sidecart/sidecart.component';
 
 @Component({
   selector: 'app-hoodies',
-  imports: [CommonModule],
+  imports: [CommonModule,SidecartComponent],
   templateUrl: './hoodies.component.html',
   styleUrl: './hoodies.component.css'
 })
@@ -27,5 +28,9 @@ export class HoodiesComponent {
   
     addToCart(item: any) {
       this.cartService.addToCart(item);
+    }
+
+    addToLike(item: any){
+      this.cartService.addToLike(item);
     }
 }

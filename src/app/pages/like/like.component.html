@@ -1,0 +1,24 @@
+<h2>Your Wish List</h2>
+<div class="cart">
+    <div *ngIf="likeList.length > 0; else emptyLikeList" class="cart_items">
+        <ul>
+            <li *ngFor="let item of likeList">
+                <img [src]="item.img" alt="{{ item.name }}" class="cart_imgs">
+                <div class="split">
+                    <span class="cart_name"> {{ item.name }}</span>
+                    <span class="cart_price"> Rs {{ item.price }} </span>
+                    <div class="btns">
+                        <button (click)="addToCart(item); $event.stopPropagation();">Move to Cart</button>
+                        <button (click)="removeFromLike(item); $event.stopPropagation();">Remove</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ng-template #emptyLikeList>
+        <p class="cart_empty">Your Wish List is empty.</p>
+    </ng-template>
+    <div class="total">
+        <button (click)="clearLikeList()">Clear Wish List</button>
+    </div>
+</div>
